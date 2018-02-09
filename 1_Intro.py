@@ -101,7 +101,31 @@ def button(msg,x,y,w,h,ic,ac,action=None):
     textRect.center = ( (x+(w/2)), (y+(h/2)) )
     gameDisplay.blit(textSurf, textRect)
 
+def paused():
+
+    largeText = pygame.font.SysFont("comicsansms",115)
+    TextSurf, TextRect = text_objects("Paused", largeText)
+    TextRect.center = ((display_width/2),(display_height/2))
+    gameDisplay.blit(TextSurf, TextRect)
     
+
+    while pause:
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+                
+        #gameDisplay.fill(white)
+        
+
+        button("Continue",150,450,100,50,green,bright_green,unpause)
+        button("Quit",550,450,100,50,red,bright_red,quitgame)
+
+        pygame.display.update()
+        clock.tick(15)  
+        
+        
 def game_loop():
     x = (display_width * 0.45)
     y = (display_height * 0.8)
