@@ -65,7 +65,7 @@ def crash():
     
     
     largeText = pygame.font.SysFont("comicsansms",115)
-    TextSurf, TextRect = text_objects("You Crashed", largeText)
+    TextSurf, TextRect = text_objects("CRASH!!!!", largeText)
     TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
     
@@ -149,7 +149,7 @@ def game_intro():
                 
         gameDisplay.fill(white)
         largeText = pygame.font.SysFont("comicsansms",115)
-        TextSurf, TextRect = text_objects("A bit Racey", largeText)
+        TextSurf, TextRect = text_objects("Speed Racer", largeText)
         TextRect.center = ((display_width/2),(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
 
